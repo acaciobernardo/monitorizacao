@@ -29,19 +29,19 @@ export default {
       id: 2,
       titulo: 'TRON',
       valor: 90,
-      footer: 'online há 5 dias'
+      footer: ''
     },{
       id: 3,
       titulo: 'Santander',
       valor: 50,
-      footer: 'online há 5 dias'
+      footer: 'dados dos últimos 3 dias'
     },{
       id: 4,
       titulo: 'IMTT',
       valor: 10,
-      footer: 'online há 5 dias'
+      footer: 'dados dos últimos 2 dias'
     },{
-      titulo: 'MAPFRE',
+      titulo: 'WS MAPFRE',
       valor: 70,
       footer: 'online há 5 dias'
     }
