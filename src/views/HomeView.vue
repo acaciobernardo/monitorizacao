@@ -21,24 +21,28 @@ export default {
   },
   setup() {
     const dados = ref([{
+      id: 1,
       titulo: 'Sites',
-      valor: '70%',
+      valor: 70,
       footer: 'online há 5 dias'
     },{
+      id: 2,
       titulo: 'TRON',
-      valor: '70%',
+      valor: 90,
       footer: 'online há 5 dias'
     },{
+      id: 3,
       titulo: 'Santander',
-      valor: '70%',
+      valor: 50,
       footer: 'online há 5 dias'
     },{
+      id: 4,
       titulo: 'IMTT',
-      valor: '70%',
+      valor: 10,
       footer: 'online há 5 dias'
     },{
       titulo: 'Webservices MAPFRE',
-      valor: '70%',
+      valor: 70,
       footer: 'online há 5 dias'
     }
   ])
