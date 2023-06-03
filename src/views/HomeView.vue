@@ -41,7 +41,7 @@ export default {
       valor: 10,
       footer: 'online há 5 dias'
     },{
-      titulo: 'Webservices MAPFRE',
+      titulo: 'MAPFRE',
       valor: 70,
       footer: 'online há 5 dias'
     }
@@ -51,6 +51,7 @@ export default {
   }
 }
 </script>
+
 
 
 <style scoped>

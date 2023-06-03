@@ -1,8 +1,12 @@
 <template>
-  <div class="indicador" :cor="getColor(valor)">
+  <div class="indicador">
     <p class="titulo">{{ titulo }}</p>
     <div class="corpo">
-        <div class="valores">{{ valor }}%</div>
+        <div class="valor">
+          <div style="width: 30px;">&nbsp;</div>
+          <div :cor="getColor(valor)"> {{ valor }}%</div>
+          <div style="width: 30px;">&nbsp;</div>
+        </div>
         <div class="rodape">
             <div><hr/></div>
             <div>
@@ -45,23 +49,25 @@ export default {
 <style scoped>
 
 .indicador {
-  max-width: 120px;
-  min-width: 120px;
-  min-height: 120px;
+  color: antiquewhite;
+  background-color: rgba(21, 21, 21, 0.443);
+  max-width: 150px;
+  min-width: 150px;
+  min-height: 150px;
   position: relative;
   font-size: small;
   border-radius: 20px;
 }
 
-.indicador[cor="red"] {
+[cor="red"] {
   background: #f44336; /* red */
 }
 
-.indicador[cor="orange"] {
+[cor="orange"] {
   background: #ff9800; /* orange */
 }
 
-.indicador[cor="green"] {
+[cor="green"] {
   background: #42b983; /* green */
 }
 
@@ -75,6 +81,25 @@ export default {
 .indicador .corpo {
   padding: 2%;
   width: 100%;
+}
+
+.indicador .corpo div.valor {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.indicador .corpo div.valor div{
+  height: 45px;
+  width: 45px;
+}
+
+.indicador .corpo div.valor div:nth-child(2) {
+  /* background-color: antiquewhite; */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .indicador .rodape {
