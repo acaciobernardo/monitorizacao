@@ -3,8 +3,12 @@
     <p class="titulo">{{ titulo }}</p>
     <div class="corpo">
         <div class="valores">{{ valor }}</div>
-        <div class="rodape">{{ rodape }}</div>
-
+        <div class="rodape">
+            <div><hr/></div>
+            <div>
+              {{ (footer) ? footer : '&nbsp;' }}
+            </div>
+        </div>
     </div>
   </div>
 </template>
@@ -14,11 +18,11 @@ export default {
   name: 'Indicador',
   props: {
     titulo: String,
-    valor: String
+    valor: String,
+    footer: String
   },
   data () {
     return {
-      rodape: '======='
     }
   }
 }
@@ -30,6 +34,7 @@ export default {
 .indicador {
   background: #42b983;
   max-width: 120px;
+  min-width: 120px;
   min-height: 120px;
   position: relative;
   font-size: small;
@@ -39,7 +44,7 @@ export default {
 .indicador .titulo {
    margin-top: 0 auto;
    padding-top: 8px;  
-
+   font-weight: bold;
    font-size: small;
 }
 
@@ -50,7 +55,7 @@ export default {
 
 .indicador .rodape {
   position: absolute;
-  bottom: 0;
+  bottom: 3px;
   left: 0;
   width: 100%;
   color: #fff;
