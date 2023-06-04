@@ -1,29 +1,38 @@
 <template>
   <div class="indicador">
-    <p class="titulo">{{ titulo }}</p>
-    <div class="corpo">
+    <router-link :to="{ name: 'indicador', params: { id: id }}">
+      <p class="titulo">{{ titulo }}</p>
+      <div class="corpo">
         <div class="valor">
           <div style="width: 30px;">&nbsp;</div>
           <div :cor="getColor(valor)"> {{ valor }}%</div>
           <div style="width: 30px;">&nbsp;</div>
         </div>
         <div class="rodape">
-            <div><hr/></div>
-            <div>
-              {{ (footer) ? footer : '&nbsp;' }}
-            </div>
+          <div><hr/></div>
+          <div>
+            {{ (footer) ? footer : '&nbsp;' }}
+          </div>
         </div>
-    </div>
+      </div>
+    </router-link> 
   </div>
 </template>
 
 <script>
+
+import HomeView from '@/views/HomeView.vue';
+
 export default {
   name: 'Indicador',
   props: {
+    id: Number,
     titulo: String,
     valor: Number,
     footer: String
+  },
+  components: {
+    HomeView
   },
   data () {
 
@@ -57,6 +66,11 @@ export default {
   position: relative;
   font-size: small;
   border-radius: 20px;
+}
+
+div.indicador a {
+  text-decoration: none;
+  color: antiquewhite;
 }
 
 [cor="red"] {

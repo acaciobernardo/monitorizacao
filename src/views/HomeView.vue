@@ -1,23 +1,30 @@
 <template>
   <div class="indicadores-container">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <Indicador v-for="di in dados" :key="di.titulo"
-         :titulo="di.titulo" 
-         :valor="di.valor"
-         :footer="di.footer"  />
+    
+      <Indicador v-for="di in dados" 
+      :id="di.id"
+      :key="di.titulo"
+      :titulo="di.titulo" 
+      :valor="di.valor"
+      :footer="di.footer"
+      />
     
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Indicador from '@/components/Indicador.vue'
 import { ref }  from 'vue'
+import Indicador from '@/components/Indicador.vue'
 
 export default {
   name: 'HomeView',
   components: {
     Indicador
+  },
+  props : {
+    id : Number
   },
   setup() {
     const dados = ref([{
