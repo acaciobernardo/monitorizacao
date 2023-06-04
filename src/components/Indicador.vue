@@ -50,7 +50,7 @@ export default {
 
 .indicador {
   color: antiquewhite;
-  background-color: rgba(21, 21, 21, 0.443);
+  background-color: rgba(75, 98, 97, 0.896);
   max-width: 150px;
   min-width: 150px;
   min-height: 150px;

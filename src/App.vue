@@ -8,7 +8,7 @@
 
 <style>
 body {
-    background-color: darkgray;
+    background-color: rgb(239, 232, 232);
 }
 
 #app {
@@ -29,6 +29,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: white;
+  color: rgb(176, 47, 18);
 }
 </style>
