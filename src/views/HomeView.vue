@@ -1,7 +1,6 @@
 <template>
   <div class="indicadores-container">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    
       <Indicador v-for="di in dados" 
       :id="di.id"
       :key="di.titulo"
@@ -15,7 +14,8 @@
 
 <script>
 // @ is an alias to /src
-import { ref }  from 'vue'
+import { ref, onMounted } from 'vue'
+import axios from 'axios';
 import Indicador from '@/components/Indicador.vue'
 
 export default {
@@ -24,36 +24,43 @@ export default {
     Indicador
   },
   props : {
-    id : Number
+    id: {
+    type: Number,
+    default: null,
+  }
   },
-  setup() {
-    const dados = ref([{
-      id: 1,
-      titulo: 'Sites',
-      valor: 70,
-      footer: 'online há 5 dias'
-    },{
-      id: 2,
-      titulo: 'TRON',
-      valor: 90,
-      footer: ''
-    },{
-      id: 3,
-      titulo: 'Santander',
-      valor: 50,
-      footer: 'dados dos últimos 3 dias'
-    },{
-      id: 4,
-      titulo: 'IMTT',
-      valor: 10,
-      footer: 'dados dos últimos 2 dias'
-    },{
-      id: 5,
-      titulo: 'WS MAPFRE',
-      valor: 70,
-      footer: 'online há 5 dias'
-    }
-  ])
+  setup(props) {
+    
+    const dados = ref([]);
+
+    
+
+    let url = "http://localhost:3000/dados";
+   
+    if (props.id) {
+        url = url + "/id/" + id;
+     }
+    
+    console.log(url);
+    
+    axios.get(url)
+     .then(response => {
+        dados.value = response.data;
+      })
+     .catch(error => {
+        console.error(error);
+      });
+
+
+    // onMounted(() => {
+    //   axios.get(url)
+    //    .then(response => {
+    //       dados.value = response.data;
+    //     })
+    //    .catch(error => {
+    //       console.error(error);
+    //     });
+    // });
 
     return { dados }
   }
