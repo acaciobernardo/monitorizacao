@@ -48,6 +48,7 @@ export default {
       valor: 10,
       footer: 'dados dos últimos 2 dias'
     },{
+      id: 5,
       titulo: 'WS MAPFRE',
       valor: 70,
       footer: 'online há 5 dias'
