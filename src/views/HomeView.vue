@@ -33,8 +33,6 @@ export default {
     
     const dados = ref([]);
 
-    
-
     let url = "http://localhost:3000/dados";
    
     if (props.id) {
@@ -51,18 +49,13 @@ export default {
         console.error(error);
       });
 
-
-    // onMounted(() => {
-    //   axios.get(url)
-    //    .then(response => {
-    //       dados.value = response.data;
-    //     })
-    //    .catch(error => {
-    //       console.error(error);
-    //     });
-    // });
-
     return { dados }
+  },
+  mounted() {
+    console.log(this.count) // 0
+  },
+  updated() {
+    console.log("updated") //
   }
 }
 </script>
