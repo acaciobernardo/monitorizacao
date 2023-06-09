@@ -1,15 +1,13 @@
 <template>
-  <div>{{ idPai }}</div>
-  <div class="indicadores-container">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-
-    <Indicador v-for="di in dados" key="di.id" :id="di.id" :key="di.titulo" :titulo="di.titulo" :valor="di.valor"
-      :footer="di.footer" />
-
+  <div>
+    <div>{{ idPai }}</div>
+    <div class="indicadores-container">
+      <Indicador v-for="di in dados" :key="di.id" :id="di.id" :titulo="di.titulo" :valor="di.valor" :footer="di.footer" />
+    </div>
   </div>
-</template>
-
-<script>
+</template> 
+ 
+<script> 
 // @ is an alias to /src
 import { ref } from "vue";
 import axios from 'axios';
