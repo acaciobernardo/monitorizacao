@@ -5,7 +5,27 @@
       "id": 1,
       "titulo": "Sites",
       "valor": 70,
-      "footer": "online há 5 dias"
+      "footer": "online há 5 dias",
+      "filhos": [
+        {
+          "id": 101,
+          "titulo": "ACTUAL",
+          "valor": 90,
+          "footer": ""
+        },
+        {
+          "id": 102,
+          "titulo": "mediadores",
+          "valor": 50,
+          "footer": "dados dos últimos 3 dias"
+        },
+        {
+          "id": 103,
+          "titulo": "clinicas",
+          "valor": 10,
+          "footer": "dados dos últimos 2 dias"
+        }
+      ]
     },
     {
       "id": 2,

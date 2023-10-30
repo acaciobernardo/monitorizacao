@@ -16,8 +16,6 @@ import Indicador from '@/components/Indicador.vue'
 async function getData(urlBase) {
   try {
     const response = await axios.get(urlBase);
-    console.log("=>");
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -46,32 +44,32 @@ export default {
     return { dados, idPai, urlBase }
   },
   updated() {
-    console.log("update " + this.id + " pai:" + this.idPai);
-
-    let url = this.urlBase;
-    if (this.id) {
-      url = url + "/" + this.id
-    }
+    //console.log("update " + this.id + " pai:" + this.idPai);
 
     if (this.id !== this.idPai) {
 
       this.idPai = this.id;
 
+      let url = this.urlBase;
+      if (this.id) {
+        url = url + "/" + this.id
+      }
+
       getData(url).then((data) => {
         if (this.id) {
-            this.dados = [data];
-          } else {
-            this.dados = data;
-          }
+          this.dados = [data];
+        } else {
+          this.dados = data;
+        }
       })
 
     }
 
   },
   mounted() {
-    console.log("mounted");
+    // console.log("mounted");
     this.dados = [];
-          
+
     getData(this.urlBase).then((data) => {
       this.dados = data;
     })
