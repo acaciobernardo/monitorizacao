@@ -1,12 +1,11 @@
 <template>
-  <div>{{ idPai }}</div>
-  <div class="indicadores-container">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-
-    <Indicador v-for="di in dados" key="di.id" :id="di.id" :key="di.titulo" :titulo="di.titulo" :valor="di.valor"
-      :footer="di.footer" />
-
-  </div>
+  <main-layout>
+    <div>{{ idPai }}</div>
+    <div class="indicadores-container">
+      <Indicador v-for="di in dados" key="di.id" :id="di.id" :key="di.titulo" :titulo="di.titulo" :valor="di.valor"
+        :footer="di.footer" />
+    </div>
+  </main-layout>
 </template>
 
 <script>
@@ -14,6 +13,7 @@
 import { ref } from "vue";
 import axios from 'axios';
 import Indicador from '@/components/Indicador.vue'
+import MainLayout from '@/components/MainLayout.vue'
 
 async function getData(urlBase) {
   try {
@@ -29,7 +29,8 @@ async function getData(urlBase) {
 export default {
   name: 'HomeView',
   components: {
-    Indicador
+    Indicador,
+    MainLayout
   },
   props: {
     id: {
